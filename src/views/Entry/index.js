@@ -46,7 +46,7 @@ const Entry = () => {
             <div className={`basis-7/12 p-4 ${indexStyle.right} md:p-12`}>
               <div className={'flex grow'}>
                 <div>
-                  <img src={'/assets/img/bg-macao.jpeg'} />
+                  <img src={'/assets/img/bg-head.jpeg'} />
                 </div>
               </div>
             </div>
