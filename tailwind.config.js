@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './**/*.html'],
   presets: [],
   darkMode: 'media', // or 'class'
   theme: {
@@ -51,7 +51,8 @@ module.exports = {
       purple: colors.purple,
       fuchsia: colors.fuchsia,
       pink: colors.pink,
-      rose: colors.rose
+      rose: colors.rose,
+      blueGray: 'rgba(255,255,255,1)'
     }),
     columns: {
       auto: 'auto',
