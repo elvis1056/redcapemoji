@@ -3,9 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 
 // import { RouteWithLayout } from '../components';
 
-const Entry = lazy (
-  async () => await import (/* webpackChunkName: 'Entry' */ '../views/Entry')
-);
+const Entry = lazy (async () => await import (/* webpackChunkName: 'Entry' */ '../views/Entry'));
+const About = lazy (async () => await import (/* webpackChunkName: 'Entry' */ '../views/About'));
+const Blog = lazy (async () => await import (/* webpackChunkName: 'Entry' */ 'views/Blog'));
 
 import { Main as MainLayout } from '../layouts';
 
@@ -28,6 +28,14 @@ const Routers = () => {
           <Route
             element={<Entry />}
             path="/"
+          />
+          <Route
+            element={<About />}
+            path="/about"
+          />
+          <Route
+            element={<Blog />}
+            path="/blog"
           />
         </Route>
       </Routes>

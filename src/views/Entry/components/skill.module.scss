@@ -1,0 +1,13 @@
+.container {
+  .icon_wrapper {
+    .icon {
+      transition: 0.5s all;
+      transform: scale(1.5);
+    }
+  }
+  .icon_wrapper:hover {
+    .icon {
+      transform: scale(1.5) rotate(360deg);
+    }
+  }
+}

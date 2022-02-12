@@ -1,6 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-const reducer = {}
+import localeReducer from './features/locale/localeSlice';
+
+const reducer = {
+  locale: localeReducer
+}
 
 export default configureStore({
   reducer

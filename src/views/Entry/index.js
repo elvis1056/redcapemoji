@@ -1,7 +1,8 @@
 import React from 'react';
 
-// import Test from './components/test';
+import SkillSection from './components/SkillSection';
 import indexStyle from './index.module.scss';
+import { Footer } from 'layouts/Main/Footer';
 
 const Entry = () => {
   return (
@@ -59,45 +60,8 @@ const Entry = () => {
           /> */}
         </div>
       </section>
-      {/* <Test /> */}
-      {/* <Test /> */}
-      {/* <Test /> */}
-      <section className={`${indexStyle.social_about_container}`}>
-        <div className={`${indexStyle.social_about_wrapper} flex flex-row`}>
-          <div className="basis-1/2">
-            <img className={`${indexStyle.head}`} />
-          </div>
-          <div className="basis-1/2" />
-        </div>
-      </section>
-      <section className={`${indexStyle.social_container}`}>
-        <ul className={`${indexStyle.social_icons}`}>
-          <li>
-            <a
-              className={'fab fa-google'}
-              href="#"
-            >
-              {/* <div className={'fab fa-google'} /> */}
-            </a>
-          </li>
-          <li>
-            <a
-              className={'fab fa-github'}
-              href="#"
-            >
-              {/* <div className={'fab fa-google'} /> */}
-            </a>
-          </li>
-          <li>
-            <a
-              className={'fab fa-facebook-square'}
-              href="#"
-            >
-              {/* <div className={'fab fa-google'} /> */}
-            </a>
-          </li>
-        </ul>
-      </section>
+      <SkillSection />
+      <Footer />
     </main>
   );
 };

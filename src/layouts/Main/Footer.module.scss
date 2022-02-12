@@ -1,0 +1,35 @@
+.social_container {
+  background-color: grey;
+  .social_icons {
+    text-align: center;
+    display: block;
+    padding: 2rem 0;
+    li {
+      display: inline-block;
+      margin-right: 3%;
+      height: 32px;
+      width: 32px;
+      border: 2px solid #fff;
+      box-shadow: 0 8px 17px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+      transform: rotate(45deg);
+      transition: 0.5s all;
+      a {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transform: translateX(-30%) translateY(20%) rotate(-45deg);
+      }
+      a:after {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        width: 32px;
+      }
+    }
+    li:hover {
+      border: 2px solid #00a78e;
+      transform: rotate(-315deg);
+    }
+  }
+}
