@@ -33,3 +33,13 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .social_container {
+    .social_icons {
+      li {
+        margin-right: 2rem;
+      }
+    }
+  }
+}
