@@ -53,7 +53,7 @@ const About = () => {
                   >
                     <div className="container mx-auto px-4">
                       <div className="flex flex-wrap -mx-4">
-                        <div className="px-12 py-12 px-4 relative w-full md:w-5/12 ml-auto">
+                        <div className="px-12 md:py-12 relative w-full md:w-5/12 ml-auto">
                           <div className="p-6">
                             <img
                               alt="..."
@@ -62,7 +62,7 @@ const About = () => {
                             />
                           </div>
                         </div>
-                        <div className="pt-12 px-4 relative w-full md:w-5/12 mr-auto flex align-center items-center">
+                        <div className="md:pt-12 px-4 relative w-full md:w-7/12 mr-auto flex align-center items-center">
                           <div className="p-4 pt-6 md:p-0">
                             <h2 className="text-2xl font-bold mt-0 mb-2">
                               {prop.title}
