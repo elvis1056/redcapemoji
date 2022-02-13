@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import indexStyle from './Navbar.module.scss';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export const Navbar = () => {
@@ -51,8 +52,7 @@ export const Navbar = () => {
           </div>
           <div
             className={
-              'lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none'
-              + (navbarOpen ? ' block rounded bg-primary-light mt-4 lg:shadow-lg' : ' hidden')
+              `${indexStyle.menu} lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none ${(navbarOpen ? `${indexStyle.active} block bg-primary-light lg:shadow-lg origin-top` : '')}`
             }
           >
             <ul className="flex flex-col lg:flex-row list-none mr-auto lg:items-center">
@@ -61,6 +61,7 @@ export const Navbar = () => {
                   <NavLink
                     className="text-white hover:text-blueGray-600 px-3 py-4 lg:py-2 flex items-center text-xs uppercase"
                     key={name}
+                    onClick={() => setNavbarOpen(!navbarOpen)}
                     style={({ isActive }) => isActive ? {} : undefined}
                     to={name}
                   >
@@ -72,7 +73,7 @@ export const Navbar = () => {
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto lg:items-center">
               <li>
                 <a
-                  className="text-blueGray-800 hover:text-blueGray-600 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                  className="text-white hover:text-gray-300 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                   href="https://www.facebook.com/profile.php?id=100000249132965"
                   rel="noreferrer"
                   target="_blank"
@@ -83,7 +84,7 @@ export const Navbar = () => {
               </li>
               <li>
                 <a
-                  className="text-blueGray-800 hover:text-blueGray-600 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                  className="text-white hover:text-gray-300 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                   href="https://github.com/elvis1056"
                 >
                   <i className="text-blueGray-500  lg:text-white fab fa-github text-lg leading-lg " />
