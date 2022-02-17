@@ -34,8 +34,8 @@ export const Navbar = () => {
   return (
     <>
       <nav
-        className={`w-full bg-primary-default flex flex-wrap items-center justify-between px-2 py-3 z-9999 ${stickyClass}`}
-        // style={{ maxHeight: '50px' }}
+        className={`w-full bg-primary-default flex flex-wrap items-center justify-between z-9999 ${stickyClass}`}
+        style={{ height: '50px', maxHeight: '50px' }}
       >
         <div className="w-full px-4 mx-auto flex flex-wrap items-center justify-between max-h-screen-70 overflow-y-auto">
           <div className="w-full relative flex items-center justify-between lg:w-auto lg:static lg:block lg:justify-start text-white text-lg px-12 font-bold">
