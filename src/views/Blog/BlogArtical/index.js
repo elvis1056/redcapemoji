@@ -8,6 +8,8 @@ import { articlesIdArray, dataIndex } from './data';
 
 import indexStyle from './index.module.scss';
 
+import gfm from 'remark-gfm';
+
 const BlogArtical = () => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -174,6 +176,7 @@ const BlogArtical = () => {
               )
             }
           }}
+          remarkPlugins={[gfm]}
         />
       </div>
     </div>
