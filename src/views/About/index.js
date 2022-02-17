@@ -33,7 +33,7 @@ const About = () => {
   return (
     <>
       <section>
-        <div className={`flex flex-wrap -mx-4 ${indexStyle.container}`}>
+        <div className={`flex flex-wrap mx-4 my-12 ${indexStyle.container}`}>
           <div className="relative">
             <div className="relative w-full overflow-hidden">
               {items.map((prop, key) => {
@@ -52,8 +52,8 @@ const About = () => {
                     key={key}
                   >
                     <div className="container mx-auto px-4">
-                      <div className="flex flex-wrap -mx-4">
-                        <div className="px-12 md:py-12 relative w-full md:w-5/12 ml-auto">
+                      <div className="flex flex-wrap mx-4">
+                        <div className=" relative w-full md:w-5/12 m-auto">
                           <div className="p-6">
                             <img
                               alt="..."
