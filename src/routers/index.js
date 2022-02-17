@@ -6,6 +6,8 @@ import { Routes, Route } from 'react-router-dom';
 const Entry = lazy (async () => await import (/* webpackChunkName: 'Entry' */ '../views/Entry'));
 const About = lazy (async () => await import (/* webpackChunkName: 'Entry' */ '../views/About'));
 const Blog = lazy (async () => await import (/* webpackChunkName: 'Entry' */ 'views/Blog'));
+const BlogList = lazy (async () => await import (/* webpackChunkName: 'Entry' */ 'views/Blog/BlogList'));
+const BlogArtical = lazy (async () => await import (/* webpackChunkName: 'Entry' */ 'views/Blog/BlogArtical'));
 
 import { Main as MainLayout } from '../layouts';
 
@@ -36,7 +38,18 @@ const Routers = () => {
           <Route
             element={<Blog />}
             path="/blog"
-          />
+          >
+            <Route
+              element={<BlogList />}
+              exact
+              index
+            />
+            <Route
+              element={<BlogArtical />}
+              exact
+              path=":id"
+            />
+          </Route>
         </Route>
       </Routes>
     </Suspense>
