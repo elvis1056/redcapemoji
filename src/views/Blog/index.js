@@ -8,7 +8,7 @@ const Blog = () => {
   return (
     <div>
       <section
-        className="dark:bg-secondary-default dark:text-slate-200"
+        className="transition-all ease-in-out duration-500 dark:bg-secondary-default dark:text-slate-200"
         style={{ height: 'calc(100vh - 150px)' }}
       >
         <div className="flex flex-row">

@@ -119,7 +119,7 @@ const SkillSection = () => {
   ]
 
   return (
-    <section className={`${skillStyle.container} pt-10 pb-10 dark:bg-secondary-default`}>
+    <section className={`${skillStyle.container} pt-10 pb-10 dark:bg-secondary-default transition-all ease-in-out duration-500`}>
       <div className="flex">
         <div className="basis-1/12" />
         <div className="flex flex-col w-full flex-wrap md:flex-row">
