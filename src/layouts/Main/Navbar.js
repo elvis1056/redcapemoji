@@ -7,7 +7,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 export const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [stickyClass, setStickyClass] = useState('relative');
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   const menuData = [
     {
