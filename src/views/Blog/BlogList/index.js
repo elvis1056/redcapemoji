@@ -43,11 +43,15 @@ const BlogList = () => {
   return (
     <div className="basis-full sm:basis-10/12 flex flex-row">
       <div className={`fixed bottom-4 left-4 md:static md:basis-3/12 ${indexStyle.left}`}>
-        <div className={`p-4 pt-4 ${screenSize.dynamicWidth < 768 ? 'border-solid border rounded-full' : 'pt-12'}`}>
-          {screenSize.dynamicWidth < 768 ? <i className={'fa fa-list'} /> : '文章分類'}
-        </div>
+        {
+          screenSize.dynamicWidth > 768 &&
+          <div className={`p-4 pt-4 ${screenSize.dynamicWidth < 768 ? 'border-solid border rounded-full' : 'pt-12'}`}>
+            {screenSize.dynamicWidth < 768 ? <i className={'fa fa-list'} /> : '文章分類'}
+          </div>
+        }
         <>
           {
+            screenSize.dynamicWidth > 768 &&
             tags.map(tag => (
               <button
                 className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 m-2 border border-blue-500 hover:border-transparent rounded"
