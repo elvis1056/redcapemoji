@@ -1,7 +1,7 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './**/*.html'],
   presets: [],
-  darkMode: 'media', // or 'class'
+  darkMode: 'class', // or 'media'
   theme: {
     screens: {
       sm: '640px',
@@ -19,12 +19,19 @@ module.exports = {
         darker: '#023324'
       },
       secondary: {
-        lighter: '#246EF2',
-        light: '#26ABFC',
-        default: '#2FD0E6',
-        dark: '#26FCDB',
-        darker: '#24F298'
+        lighter: '#0C0A36',
+        light: '#0C1740',
+        default: '#0A1929',
+        dark: '#0C3340',
+        darker: '#0A3635'
       },
+      // secondary: {
+      //   lighter: '#246EF2',
+      //   light: '#26ABFC',
+      //   default: '#2FD0E6',
+      //   dark: '#26FCDB',
+      //   darker: '#24F298'
+      // },
       inherit: colors.inherit,
       current: colors.current,
       transparent: colors.transparent,
