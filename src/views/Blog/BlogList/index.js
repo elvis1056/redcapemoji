@@ -22,6 +22,18 @@ const BlogList = () => {
       title: '什麼是 MVC/MVVM',
       subTitle: '一種分類方法、一種設計模式，將資料、邏輯、顯示個別區分開來',
       tags: ['MVC', 'MVVM']
+    },
+    {
+      id: 2,
+      title: 'JavaScript map()',
+      subTitle: '最常使用的工具之一，建立一個新陣列，可以在裡面做運算',
+      tags: ['JavaScript', 'map', 'array']
+    },
+    {
+      id: 3,
+      title: '學習 React-markdown',
+      subTitle: '透過 Markdown 讓文章更優雅',
+      tags: ['markdown', 'react']
     }
   ]
 
@@ -63,7 +75,10 @@ const BlogList = () => {
           }
         </>
       </div>
-      <div className={`grow basis-full md:basis-9/12 ${indexStyle.left} w-full md:w-1/3`}>
+      <div
+        className={`grow basis-full md:basis-9/12 ${indexStyle.left} w-full md:w-1/3`}
+        style={{ height: 'calc(100vh - 150px)', overflow: 'auto' }}
+      >
         <div className={`${screenSize.dynamicWidth > 400 && 'p-4 pt-12'}`}>
           {
             articles.map(({ title, subTitle, tags, id }) => {
@@ -72,7 +87,7 @@ const BlogList = () => {
                   className={`lg:pl-0 ${screenSize.dynamicWidth > 400 ? 'px-4 py-4' : ''} first:pt-0 flex-auto`}
                   key={title}
                 >
-                  <div className={`rounded shadow-lg hover:shadow-2xl transition-all  border-transparent ${screenSize.dynamicWidth < 400 && 'm-8'}`}>
+                  <div className={`rounded shadow-lg hover:shadow-2xl transition-all  border-transparent ${screenSize.dynamicWidth < 400 && 'm-8'} border dark:border-slate-200`}>
                     <div
                       className="px-6 pt-4 pb-2 text-base md:text-xl"
                       style={{ borderBottom: '1px solid #EAEAEA' }}

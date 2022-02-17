@@ -32,8 +32,11 @@ const About = () => {
   ]
   return (
     <>
-      <section>
-        <div className={`flex flex-wrap mx-4 my-12 ${indexStyle.container}`}>
+      <section
+        className="dark:bg-secondary-default dark:text-slate-200"
+        style={{ height: 'calc(100vh - 150px)' }}
+      >
+        <div className={`flex flex-wrap px-4 py-12 ${indexStyle.container}`}>
           <div className="relative">
             <div className="relative w-full overflow-hidden">
               {items.map((prop, key) => {
@@ -81,7 +84,7 @@ const About = () => {
                                   <div className={`flex items-center ${indexStyle.icon_wrapper}`}>
                                     <span
                                       className={
-                                        'inline-flex text-center rounded-full mr-3 items-center justify-center text-sm w-8 h-8 text-white-500 bg-stone-200'
+                                        'inline-flex text-center rounded-full mr-3 items-center justify-center text-sm w-8 h-8 text-white-500 bg-stone-200 dark:text-black-500 dark:bg-secondary-dark'
                                       }
                                     >
                                       <i className={`${listProp.icon} ${indexStyle.icon}`} />

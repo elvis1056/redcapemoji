@@ -7,6 +7,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 export const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [stickyClass, setStickyClass] = useState('relative');
+  const [isDark, setIsDark] = useState(true);
 
   const menuData = [
     {
@@ -31,10 +32,18 @@ export const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (isDark) {
+      document.querySelector('#root').classList.add('dark')
+    } else {
+      document.querySelector('#root').classList.remove('dark')
+    }
+  }, [isDark])
+
   return (
     <>
       <nav
-        className={`w-full bg-primary-default flex flex-wrap items-center justify-between z-9999 ${stickyClass}`}
+        className={`w-full dark:bg-secondary-default bg-primary-default flex flex-wrap items-center justify-between z-9999 ${stickyClass}`}
         style={{ height: '50px', maxHeight: '50px' }}
       >
         <div className="w-full px-4 mx-auto flex flex-wrap items-center justify-between max-h-screen-70 overflow-y-auto">
@@ -71,6 +80,16 @@ export const Navbar = () => {
               }
             </ul>
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto lg:items-center">
+              <li
+                onClick={() => setIsDark(!isDark)}
+              >
+                <a className="text-white hover:text-gray-300 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
+                  <i
+                    className={`${isDark ? 'fas fa-moon' : 'fas fa-sun'} text-blueGray-500 lg:text-white text-lg leading-lg`}
+                  />
+                  <span className="lg:hidden inline-block ml-2">Mode</span>
+                </a>
+              </li>
               <li>
                 <a
                   className="text-white hover:text-gray-300 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"

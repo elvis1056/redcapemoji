@@ -7,7 +7,10 @@ import { Footer } from 'layouts/Main/Footer';
 const Blog = () => {
   return (
     <div>
-      <section>
+      <section
+        className="dark:bg-secondary-default dark:text-slate-200"
+        style={{ height: 'calc(100vh - 150px)' }}
+      >
         <div className="flex flex-row">
           <div className="basis-1/12" />
           <div className="basis-10/12">

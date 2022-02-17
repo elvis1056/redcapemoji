@@ -119,7 +119,7 @@ const SkillSection = () => {
   ]
 
   return (
-    <section className={`${skillStyle.container} pt-10 pb-10`}>
+    <section className={`${skillStyle.container} pt-10 pb-10 dark:bg-secondary-default`}>
       <div className="flex">
         <div className="basis-1/12" />
         <div className="flex flex-col w-full flex-wrap md:flex-row">
@@ -132,7 +132,7 @@ const SkillSection = () => {
                 >
                   <div className="px-4 py-4 h-full">
                     <div className="relative flex flex-col min-w-0 break-words bg-white w-full shadow-lg rounded-lg h-full">
-                      <div className={`px-4 py-5 flex-auto ${skillStyle.icon_wrapper}`}>
+                      <div className={`px-4 py-5 flex-auto ${skillStyle.icon_wrapper} dark:bg-secondary-dark dark:text-slate-200`}>
                         <div className={'text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-gradient-to-b from-slate-400 to-slate-600 bg-slate-400'}>
                           <i className={`${icon} ${skillStyle.icon}`} /></div>
                         <h6 className="text-xl font-semibold">{title}</h6>

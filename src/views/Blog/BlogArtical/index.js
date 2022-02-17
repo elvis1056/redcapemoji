@@ -67,7 +67,10 @@ const BlogArtical = () => {
           </div>
       }
       <div className={`fixed bottom-4 left-4 md:static md:basis-3/12 ${screenSize.dynamicWidth < 768 ? '' : 'mx-8'}`}>
-        <div className={`p-4 pt-4 ${screenSize.dynamicWidth < 768 ? 'border-solid border rounded-full' : 'pt-12'}`}>
+        <div
+          className={`p-4 pt-4 ${screenSize.dynamicWidth < 768 ? 'border-solid border rounded-full' : 'pt-12'}`}
+          style={screenSize.dynamicWidth < 768 ? { padding: '0.5rem' } : {}}
+        >
           {
             screenSize.dynamicWidth < 768
               ?
@@ -94,7 +97,10 @@ const BlogArtical = () => {
           </div>
         }
       </div>
-      <div className={'grow basis-full md:basis-9/12 w-full md:w-1/3'}>
+      <div
+        className={'grow basis-full md:basis-9/12 w-full md:w-1/3'}
+        style={{ height: 'calc(100vh - 150px)', overflow: 'auto' }}
+      >
         <div className={`${screenSize.dynamicWidth < 768 ? 'pt-4' : 'pt-12'}`} />
         <ReactMarkdown
         /* eslint-disable-next-line */
