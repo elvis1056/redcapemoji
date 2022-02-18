@@ -56,7 +56,7 @@ export const Navbar = () => {
               onClick={() => setNavbarOpen(!navbarOpen)}
               type="button"
             >
-              <i className={`text-white ${navbarOpen ? 'fas fa-times animate-bounce ' : 'fas fa-bars'}`} />
+              <i className={`text-white ${navbarOpen ? 'fas fa-times' : 'fas fa-bars'}`} />
             </button>
           </div>
           <div
