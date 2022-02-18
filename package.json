@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "animate.css": "^4.1.1",
     "axios": "^0.26.0",
     "github-markdown-css": "^5.1.0",
     "lodash": "^4.17.21",
@@ -20,7 +21,8 @@
     "react-scripts": "5.0.0",
     "remark-gfm": "^3.0.1",
     "sass": "^1.49.7",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "wow.js": "^1.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
