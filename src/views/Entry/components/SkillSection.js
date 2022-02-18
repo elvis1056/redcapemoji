@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import WOW from 'wow.js';
 
 // ? styles
 import skillStyle from './skill.module.scss';
@@ -118,6 +120,10 @@ const SkillSection = () => {
     }
   ]
 
+  useEffect(() => {
+    new WOW().init();
+  }, [])
+
   return (
     <section className={`${skillStyle.container} pt-10 pb-10 dark:bg-secondary-default transition-all ease-in-out duration-500`}>
       <div className="flex">
@@ -127,7 +133,7 @@ const SkillSection = () => {
             data.map(({ key, icon, title, desList }) => {
               return (
                 <div
-                  className="w-full md:w-1/3"
+                  className="w-full md:w-1/3 animate__animated animate__fadeInUp wow"
                   key={key}
                 >
                   <div className="px-4 py-4 h-full">
