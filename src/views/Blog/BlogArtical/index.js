@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useOutletContext } from 'react-router-dom';
 import { isEmpty } from 'lodash';
 import ReactMarkdown from 'react-markdown';
 
@@ -12,23 +12,12 @@ import gfm from 'remark-gfm';
 
 const BlogArtical = () => {
   const navigate = useNavigate();
+  const [screenSize] = useOutletContext();
   const { id } = useParams();
   const [content, setContent] = useState('');
   const [contentIndex, setContentIndex] = useState([]);
 
   const [isIndexOpen, setIsIndexOpen] = useState(false);
-
-  const [screenSize, getDimension] = useState({
-    dynamicWidth: window.innerWidth,
-    dynamicHeight: window.innerHeight
-  });
-
-  const setDimension = () => {
-    getDimension({
-      dynamicWidth: window.innerWidth,
-      dynamicHeight: window.innerHeight
-    })
-  }
 
   const getData = async (articleId) => {
     const file = await import(`./md/article-${articleId}.md`);
@@ -36,14 +25,6 @@ const BlogArtical = () => {
     const text = await response.text();
     setContent(text)
   }
-
-  useEffect(() => {
-    window.addEventListener('resize', setDimension);
-
-    return(() => {
-      window.removeEventListener('resize', setDimension);
-    })
-  }, [screenSize])
 
   useEffect(() => {
     if (articlesIdArray.includes(Number(id))) {

@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { Footer } from 'layouts/Main/Footer';
 // import indexStyle from './index.module.scss';
 
 const Blog = () => {
+
+  const [screenSize, getDimension] = useState({
+    dynamicWidth: window.innerWidth,
+    dynamicHeight: window.innerHeight
+  });
+  const setDimension = () => {
+    getDimension({
+      dynamicWidth: window.innerWidth,
+      dynamicHeight: window.innerHeight
+    })
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', setDimension);
+
+    return(() => {
+      window.removeEventListener('resize', setDimension);
+    })
+  }, [screenSize])
+
   return (
     <div>
       <section
@@ -14,12 +34,18 @@ const Blog = () => {
         <div className="flex flex-row">
           <div className="basis-1/12" />
           <div className="basis-10/12">
-            <Outlet />
+            <Outlet
+              context={
+                [
+                  screenSize
+                ]
+              }
+            />
           </div>
           <div className="basis-1/12" />
         </div>
       </section>
-      <Footer />
+      {screenSize.dynamicWidth > 768 && <Footer />}
     </div>
   )
   // return (

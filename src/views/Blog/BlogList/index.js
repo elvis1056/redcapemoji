@@ -1,20 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react';
+import { NavLink, useOutletContext } from 'react-router-dom';
 
 import indexStyle from './index.module.scss';
 
 const BlogList = () => {
 
-  const [screenSize, getDimension] = useState({
-    dynamicWidth: window.innerWidth,
-    dynamicHeight: window.innerHeight
-  });
-  const setDimension = () => {
-    getDimension({
-      dynamicWidth: window.innerWidth,
-      dynamicHeight: window.innerHeight
-    })
-  }
+  const [screenSize] = useOutletContext();
 
   const articles = [
     {
@@ -43,14 +34,6 @@ const BlogList = () => {
     const newTags = tags.filter(item => !result.includes(item))
     return [ ...result, ...newTags ]
   }, [])
-
-  useEffect(() => {
-    window.addEventListener('resize', setDimension);
-
-    return(() => {
-      window.removeEventListener('resize', setDimension);
-    })
-  }, [screenSize])
 
   return (
     <div className="basis-full sm:basis-10/12 flex flex-row">
