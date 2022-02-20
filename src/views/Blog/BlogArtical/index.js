@@ -172,6 +172,7 @@ function RecursiveRender(props) {
       {
         data.map(item => (
           <ul
+            className="list-none"
             key={item.title}
           >
             <li style={{ paddingTop: 10 }}>

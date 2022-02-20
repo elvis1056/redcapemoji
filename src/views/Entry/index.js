@@ -22,21 +22,21 @@ const Entry = () => {
               <div className={`flex flex-col grow ${indexStyle.description}`}>
                 <h1>Elvis Lin 大鈞</h1>
                 <h4>A bit about Me</h4>
-                <ul className={'mt-4'}>
+                <ul className={'mt-4 list-none'}>
                   <li>
-                    <ul className={`${indexStyle.description_text_block}`}>
+                    <ul className={`list-none ${indexStyle.description_text_block}`}>
                       <li><b>NAME</b></li>
                       <li>{'I\'M ELVIS LIN'}</li>
                     </ul>
                   </li>
                   <li>
-                    <ul className={`${indexStyle.description_text_block}`}>
+                    <ul className={`list-none ${indexStyle.description_text_block}`}>
                       <li><b>PHONE </b></li>
                       <li>+886 975 371 151</li>
                     </ul>
                   </li>
                   <li>
-                    <ul className={`${indexStyle.description_text_block}`}>
+                    <ul className={`list-none ${indexStyle.description_text_block}`}>
                       <li><b>E-MAIL </b></li>
                       <li><a href="mailto:john800116@gmail.com">john800116@gmail.com</a></li>
                     </ul>
