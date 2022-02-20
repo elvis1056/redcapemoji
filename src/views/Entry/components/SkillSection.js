@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
 import WOW from 'wow.js';
+import { isString } from 'lodash';
 
 // ? styles
 import skillStyle from './skill.module.scss';
@@ -12,37 +13,52 @@ const SkillSection = () => {
       key: 'html',
       icon: 'fab fa-html5',
       title: 'HTML / HTML5',
-      desList: [
+      desLists: [
         {
           key: 'html1',
-          str: '善用語意化標籤'
+          skillTitle: '善用語意化標籤'
         },
         {
           key: 'html2',
-          str: 'RWD 響應式網頁規劃'
+          skillTitle: 'RWD 響應式網站規劃'
         }
+
       ]
     },
     {
       key: 'css',
       icon: 'fab fa-css3-alt',
       title: 'CSS / CSS3',
-      desList: [
+      desLists: [
         {
           key: 'css1',
-          str: '善用 Material UI / Fabric UI 整合三方庫'
+          skillTitle: '善用整合三方庫',
+          skills: [
+            'Material UI',
+            'Fabric UI',
+            'Tailwind',
+            'Bootstrap'
+          ]
         },
         {
           key: 'css2',
-          str: '字型檔整合 ( 不使用 CDN )'
+          skillTitle: '字型檔整合 ( 不使用 CDN )'
         },
         {
           key: 'css3',
-          str: '整合 FontAwesome Icon'
+          skillTitle: '整合 FontAwesome Icon'
         },
         {
           key: 'css4',
-          str: 'Sass 預處理管理 CSS'
+          skillTitle: 'Sass / Scss + css module'
+        },
+        {
+          key: 'css5',
+          skillTitle: 'CSS 一致性 駝峰 BEM 命名'
+        },
+        {
+          key: 'css6',
+          skillTitle: 'Flexbox、Grid System'
         }
       ]
     },
@@ -50,18 +66,18 @@ const SkillSection = () => {
       key: 'js',
       icon: 'fab fa-js-square',
       title: 'JavaScript',
-      desList: [
+      desLists: [
         {
           key: 'js1',
-          str: '了解 JavaScript 基礎與 ES6 語言特性'
+          skillTitle: '了解 JavaScript 基礎與 ES6 語言特性'
         },
         {
           key: 'js2',
-          str: '自定義 Pure function'
+          skillTitle: '自定義 Pure function'
         },
         {
           key: 'js3',
-          str: '透過 Fetch / axios / AJAX 串接 RESTful API'
+          skillTitle: '透過 Fetch / axios / AJAX 串接 RESTful API'
         }
       ]
     },
@@ -69,18 +85,18 @@ const SkillSection = () => {
       key: 'frameworks',
       icon: 'fas fa-crop-alt',
       title: 'Frameworks',
-      desList: [
+      desLists: [
         {
           key: 'fw1',
-          str: 'Base Components 建構與規劃'
+          skillTitle: 'Base Components 建構與規劃'
         },
         {
           key: 'fw2',
-          str: 'lodash / moment 等三方插件庫應用'
+          skillTitle: 'lodash / moment 等三方插件庫應用'
         },
         {
           key: 'fw3',
-          str: 'ESLint + prettier 維持程式碼品質'
+          skillTitle: 'ESLint + prettier 維持程式碼品質'
         }
       ]
     },
@@ -88,18 +104,18 @@ const SkillSection = () => {
       key: 'tools',
       icon: 'fas fa-tools',
       title: 'Tools',
-      desList: [
+      desLists: [
         {
           key: 'tool1',
-          str: 'git 版本控制'
+          skillTitle: 'git 版本控制'
         },
         {
           key: 'tool2',
-          str: '透過 google 自行解決問題'
+          skillTitle: '透過 google 自行解決問題'
         },
         {
           key: 'tool3',
-          str: 'NPM NVM'
+          skillTitle: 'NPM NVM'
         }
       ]
     },
@@ -107,14 +123,23 @@ const SkillSection = () => {
       key: 'others',
       icon: 'fas fa-list',
       title: 'Others',
-      desList: [
+      desLists: [
         {
           key: 'o1',
-          str: 'AWS 部署自己網站'
+          skillTitle: 'AWS 部署自己網站',
+          skills: [
+            'Ngnix',
+            'Docker',
+            'AWS'
+          ]
         },
         {
           key: 'o2',
-          str: '具有 GitHub Pages 部署靜態網頁經驗'
+          skillTitle: '具有 GitHub Pages 部署靜態網頁經驗'
+        },
+        {
+          key: 'o3',
+          skillTitle: 'Go + github page 部署部落格'
         }
       ]
     }
@@ -130,7 +155,7 @@ const SkillSection = () => {
         <div className="basis-1/12" />
         <div className="flex flex-col w-full flex-wrap md:flex-row">
           {
-            data.map(({ key, icon, title, desList }) => {
+            data.map(({ key, icon, title, desLists }) => {
               return (
                 <div
                   className="w-full md:w-1/3 animate__animated animate__fadeInUp wow"
@@ -143,21 +168,55 @@ const SkillSection = () => {
                           <i className={`${icon} ${skillStyle.icon}`} /></div>
                         <h6 className="text-xl font-semibold">{title}</h6>
                         {
-                          desList !== undefined &&
-                        <p className="mt-2 mb-4 text-blueGray-400">
-                          {
-                            desList.map(
-                              ({ key, str }) => (
-                                <li
-                                  className={'mt-2'}
-                                  key={key}
-                                >
-                                  {str}
-                                </li>
-                              )
-                            )
-                          }
-                        </p>
+                          desLists !== undefined &&
+                          <p className="mt-2 mb-4 ml-4 text-blueGray-400">
+                            <ul>
+                              {
+                                desLists.map(
+                                  ({ key, skillTitle, skills }) => {
+                                    if (skills) {
+                                      return (
+                                        <>
+                                          <li>{skillTitle}</li>
+                                          <ul>
+                                            {
+                                              isString(skills)
+                                                ?
+                                                <li
+                                                  className={'mt-2'}
+                                                  key={key}
+                                                >
+                                                  {skills}
+                                                </li>
+                                                :
+                                                skills.map((item) => {
+                                                  return (
+                                                    <li
+                                                      className={'mt-2 ml-4'}
+                                                      key={item}
+                                                    >
+                                                      {item}
+                                                    </li>
+                                                  )
+                                                })
+                                            }
+                                          </ul>
+                                        </>
+                                      )
+                                    }
+                                    return (
+                                      <li
+                                        className={'mt-2'}
+                                        key={key}
+                                      >
+                                        {skillTitle}
+                                      </li>
+                                    )
+                                  }
+                                )
+                              }
+                            </ul>
+                          </p>
                         }
                       </div>
                     </div>
