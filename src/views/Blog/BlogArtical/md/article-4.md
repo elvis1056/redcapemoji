@@ -13,10 +13,14 @@
 檢查是否有設定好要執行的指令？
 
 ```sh
+
 export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
 ```
+
+#
 
 假使檔案中已經有了就不需要另外儲存後重啟執行
 
@@ -24,9 +28,12 @@ export NVM_DIR="$HOME/.nvm"
 
 如果沒有的話那就添加上面的指令吧
 
-存檔後重行執行這隻檔案，我把它全部列出來友善複製 ( 根據你開的終端機不同要執行不同的 )
+存檔後重行執行這隻檔案，我把它全部列出來友善複製
 
-```sh
+( 根據你開的終端機不同要執行不同的 )
+
+```javascript
+
 source ~/.bash_profile
 
 source ~/.zshrc
@@ -34,7 +41,10 @@ source ~/.zshrc
 source ~/.profile
 
 source ~/.bashrc
+
 ```
+
+#
 
 應該這樣就不會再爆錯了
 
