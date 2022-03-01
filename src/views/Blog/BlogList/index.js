@@ -25,6 +25,12 @@ const BlogList = () => {
       title: '學習 React-markdown',
       subTitle: '透過 Markdown 讓文章更優雅',
       tags: ['markdown', 'react']
+    },
+    {
+      id: 4,
+      title: 'zsh: command not found 解決辦法',
+      subTitle: '問題與解決',
+      tags: ['zsh', '終端機', '環境']
     }
   ]
 

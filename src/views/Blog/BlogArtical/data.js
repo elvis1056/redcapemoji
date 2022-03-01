@@ -1,5 +1,5 @@
 export const articlesIdArray = [
-  1, 2, 3
+  1, 2, 3, 4
 ]
 
 export const dataIndex = {
@@ -44,6 +44,16 @@ export const dataIndex = {
         },
         {
           title: '錨點 css'
+        }
+      ]
+    }
+  ],
+  4: [
+    {
+      title: 'zsh: command not found 解決辦法',
+      data: [
+        {
+          title: '解決辦法與過程'
         }
       ]
     }
