@@ -1,5 +1,5 @@
 export const articlesIdArray = [
-  1, 2, 3, 4
+  1, 2, 3, 4, 5
 ]
 
 export const dataIndex = {
@@ -54,6 +54,27 @@ export const dataIndex = {
       data: [
         {
           title: '解決辦法與過程'
+        }
+      ]
+    }
+  ],
+  5: [
+    {
+      title: '[演算法] leetcode - 121. Best Time to Buy and Sell Stock',
+      data: [
+        {
+          title: '題目'
+        },
+        {
+          title: '解題思路',
+          data: [
+            {
+              title: '解法一'
+            },
+            {
+              title: '解法二'
+            }
+          ]
         }
       ]
     }

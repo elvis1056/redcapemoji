@@ -31,6 +31,12 @@ const BlogList = () => {
       title: 'zsh: command not found 解決辦法',
       subTitle: '問題與解決',
       tags: ['zsh', '終端機', '環境']
+    },
+    {
+      id: 5,
+      title: '[演算法] leetcode - Best Time to Buy and Sell Stock',
+      subTitle: '演算法',
+      tags: ['leetcode', '演算法', '解題思路']
     }
   ]
 
